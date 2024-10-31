@@ -15,9 +15,11 @@ body {
 /* Global Tags */
 :root {
   --primaryblue: #196eb2;
+  --hoverblue: #196db2d0;
+  --greyblue:#c4e2faa9;
   --white: #f5f5f5;
   --grey: #ebf0f7;
-  --black: #000b18;
+  --black: #112031;
 }
 
 h1 {
@@ -46,6 +48,7 @@ nav {
   align-items: center;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
   position: fixed;
+  z-index: 999;
   width: 100%;
   background-color: var(--white);
 }
@@ -78,7 +81,6 @@ nav .navigation ul li a {
 
 nav .navigation ul li a:hover {
 background-color: var(--primaryblue);
-
 color: var(--white);
 }/* Home */
 
@@ -120,6 +122,7 @@ color: var(--white);
   font-weight: 600;
   border-radius: 5px;
   padding: 13px 35px;
+  transition: 0.3s ease-in-out;
 }
 
 #home a.blue {
@@ -133,9 +136,8 @@ color: var(--white);
 }
 
 #home a:hover {
-  background-color: #757373;
+  background-color: var(--black);
   color: var(--white);
-  transition: 0.3s ease-in-out;
 }
 
 /* Features */
@@ -177,9 +179,12 @@ padding: 13px 0 7px 0}
 }
 
 /* Course */
+#course hr {
+  margin-bottom: 70px;
+}
 
 #course {
-  padding: 8vw 8vw 0 8vw;
+  padding: 8vw 8vw 4vw 8vw;
   text-align: center;
 }
 
@@ -196,17 +201,22 @@ padding: 13px 0 7px 0}
   background-color: var(--grey);
   height: 100%;
   position: relative;
+  padding-bottom: 20px;
+  max-width: 500px;
 }
 
 #course .courses img {
-width: 100%;
-max-height: 200px;
+width: 500px;
+height: 300px;
 background-size: cover;
-  background-position: center;
+background-position: center;
+object-fit: cover;
+
 }
 
 #course .courses .details {
   padding: 15px 15px 0 15px;
+  line-height: 1.5rem;
 }
 
 #course .courses .details i {
@@ -222,8 +232,269 @@ background-size: cover;
   height: 70px;
   text-align: center;
   border-radius: 50%;
-  font-size: .9rem;
+  font-size: .8rem;
   position: absolute;
   right: 15px;
-  bottom: 100px;
+  bottom: 80px;
+}
+
+#catalog {
+  margin-top: 70px;
+  display: inline-block;
+  text-align: left;
+}
+
+#catalog .browse a {
+  font-size: 1.8rem;
+  color: var(--primaryblue);
+  text-decoration: none;
+}
+
+#catalog a:hover {
+  text-decoration: underline;
+}
+
+/*`ion*/
+
+#registration {
+  padding: 6vw 8vw 6vw 8vw;
+  background-image: linear-gradient(rgba(99, 112, 168, 9.5), rgba(81, 91, 233, 0.5)), url(images/4.webp);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#registration .reminder {
+  color: var(--white);
+}
+
+#registration .reminder h1 {
+  color: var(--white);
+}
+
+#registration .time {
+  display: flex;
+  margin-top: 40px;
+
+}
+
+#registration .reminder .time .date {
+  text-align: center;
+  padding: 13px 33px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 5px;
+  margin: 0 5px 10px 5px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#registration .form {
+  background-color: var(--white);
+  width: 400px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+#registration .form input  {
+  margin: 15px 0;
+  padding: 15px 10px;
+  border: 1px solid var(--primaryblue);
+}
+
+#registration .form input::placeholder {
+  color: var(--hoverblue);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+#registration .form label {
+  color: var(--black);
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+#registration .form select {
+  padding: 15px 10px;
+}
+
+
+
+#registration .form .btn {
+  margin-top: 20px;
+}
+
+#registration .form a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 13px 35px;
+  background-color: var(--primaryblue);
+  font-weight: 600;
+  border-radius: 5px;
+  color: var(--white);
+  transition: 0.3s ease;
+}
+#registration .form a:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+/* Alumni */ 
+
+#alumni {
+  padding:  8vw 8vw 5vw 8vw;
+  text-align: center;
+}
+
+#alumni p {
+  max-width: 900px;
+  line-height: 1.9rem;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#alumni .alumni-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+#alumni .alumni-box .profile {
+  background-color: var(--grey);
+  width: 400px;
+  padding: 30px 40px;
+  line-height: 1.6rem;
+  border-radius: 10px;
+}
+
+#alumni .alumni-box .profile img {
+  max-height: 200px;
+}
+
+#alumni .alumni-box .profile .pro_links {
+  margin-top: 10px;
+}
+
+.pro_links i {
+  padding: 10px 13px;
+  border: 1px solid var(--primaryblue);
+  color: var(--primaryblue);
+}
+
+.pro_links i:hover {
+  background-color: var(--primaryblue);
+  color: var(--white);
+  border: 1px solid var(--primaryblue);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Footer */
+
+footer {
+  padding: 8vw;
+  background-color: var(--primaryblue);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+footer .footer-col {
+  padding-bottom: 40px;
+}
+
+
+footer h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+  transition: 0.3s ease;
+  border-bottom: 2px solid var(--grey);
+  margin-bottom: 10px;
+}
+
+footer li {
+  list-style-type: none;
+  padding: 10px 0;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+footer li:hover {
+  color: #aab5be;
+}
+
+
+footer .subscribe {
+  margin-top: 20px;
+
+}
+
+footer input {
+  width: 220px;
+  padding: 15px 12px;
+  background-color: var(--);
+  color: var(--black);
+  border-radius: 5px;
+  border: none;
+}
+
+footer .subscribe .btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 16px 35px;
+  background-color: var(--black);
+  font-weight: 600;
+  border-radius: 5px;
+  color: var(--white);
+  transition: 0.3s ease;
+}
+
+
+footer .subscribe .btn:hover {
+  background-color: var(--white);
+color: var(--primaryblue);
+}
+
+footer .copyright {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+footer .copyright p {
+  color: var(--white);
+}
+
+footer .pro_links {
+  color: var(--white);
+}
+
+footer .pro_links i {
+  padding: 10px 13px;
+  background-color: var(--greyblue);
+  font-size: 1.7rem;
+  color: var(--primaryblue);
+  transition: 0.3s ease;
+  border-radius: 5px;
+
+}
+
+footer .pro_links i:hover {
+  color: var(--white);
+  cursor: pointer;
+  background-color: var(--black);
 }
